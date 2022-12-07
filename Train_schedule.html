@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CSS Variables */
+        :root {
+            --navbar-height: 59px;
+        }
+
+        /* Navigation Bar */
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Navigation Bar: Logo and Image */
+        #logo {
+            margin: 10px 34px;
+        }
+
+        #logo img {
+            filter: invert();
+            height: 59px;
+            margin: 3px 6px;
+        }
+
+
+        /* Navigation Bar: List Styling */
+
+        #navbar ul {
+            display: flex;
+            font-family: 'Baloo Bhai', cursive;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+
+
+
+
+        /* Home Section */
+
+
+        #home {
+
+            margin-left: 920px;
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 550px;
+            margin-top: 100px;
+        }
+
+
+        #home h1 {
+            display: flex;
+        }
+
+        #home img {
+            display: flex;
+            padding: -17px;
+            margin: 28px;
+            width: 120px;
+            border-radius: 70px;
+
+        }
+
+        .form-group input {
+            width: 180px;
+            border-radius: 8px;
+            text-align: center;
+            padding: 5px;
+            font-size: 15px;
+            margin: 6px auto;
+            border: none;
+            font-family: 'Bree Serif', serif;
+
+        }
+
+        #home button {
+            height: 30px;
+            font-family: 'Bree Serif', serif;
+            margin: 5px 0px;
+            padding: 3px;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 93px;
+            border: none;
+
+        }
+
+
+        #home button:hover {
+            box-shadow: 1.6px 1.6px rgb(225, 239, 225);
+            color: white;
+            background-color: rgba(9, 6, 6, 0.826);
+        }
+
+        #home::before {
+            filter: brightness(0.5);
+            content: "";
+            position: absolute;
+            background: url('BG4.jpg') no-repeat center center/cover;
+            height: 750px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        #home h1 {
+            font-size: 25px;
+            color: white;
+            text-align: center;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #home p {
+            z-index: -1;
+            display: flex;
+            top: 150px;
+            right: 125px;
+            color: white;
+            text-align: center;
+            font-size: 4.5rem;
+            font-family: 'Bree Serif', serif;
+            width: 500px;
+            position: absolute;
+
+        }
+
+
+
+        #author {
+
+            position: absolute;
+            margin: 30px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            top: 60px;
+            z-index: -1;
+
+        }
+
+
+        .search_box {
+
+            position: absolute;
+            margin: 100px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+            top: 300px;
+            /* z-index: -1; */
+
+        }
+
+
+        footer {
+            position: relative;
+
+            background: black;
+            color: white;
+            padding: 5px 0px;
+
+
+            /* padding: 9px; */
+        }
+
+
+
+
+        .center {
+            text-align: center;
+        }
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+        * {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+    margin-top: 15px;
+    margin-left: 26px;
+    padding: 10px;
+    font-size: 17px;
+    
+    float: left;
+    width: 300%;
+    background: #f1f1f1;
+    height: 50px;
+    border-radius: 30px;
+}
+
+
+/* Style the submit button */
+form.example button {
+    
+    border-radius: 30px;
+
+    margin-top: 15px;
+    height: 50px;
+    position: absolute;
+    margin-left: 10px;
+  float: right;
+  width: 20%;
+  padding: 10px;
+  background: #339df4;
+  color: white;
+  font-size: 17px;
+  border: none;
+ 
+  /* border-left: none; Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #00294a;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+        
+
+        /* .h-secondary center{
+            text-align: center;
+        } */
+    </style>
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="login">
+        </div>
+        <ul>
+            <li class="item"><a href="Home.html">HOME</a></li>
+            <li class="item"><a href="Train_schedule.html">TRAIN SCHEDULE</a></li>
+            <li class="item"><a href="Train_Between.html">BETWEEN STATION</a></li>
+            <li class="item"><a href="#contact">RESCHEDULE</a></li>
+            <li class="item"><a href="#contact">CANCELLED</a>
+            <li class="item"><a href="#contact">DIVERTED</a></li>
+            <li class="item"><a href="#about-section">CONTACT US</a></li>
+        </ul>
+    </nav>
+</body>
+
+<section id="home">
+
+</section>
+
+<div class="quotes">
+
+    <p id="author">Train Schedule</p>
+
+</div>
+
+
+<div class="search_box">
+
+
+
+   <!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<a>Train Number:</a>
+<form class="example" action="action_page.php">
+    
+  <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+
+
+
+
+
+<footer>
+    <div class="center">
+        Copyright &copy; Indian Railway Reservation System. All rights reserved!
+    </div>
+</footer>

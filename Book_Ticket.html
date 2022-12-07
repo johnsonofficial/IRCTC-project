@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Ticket</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* CSS Variables */
+        :root {
+            --navbar-height: 59px;
+        }
+
+        /* Navigation Bar */
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Navigation Bar: Logo and Image */
+        #logo {
+            margin: 10px 34px;
+        }
+
+        #logo img {
+            filter: invert();
+            height: 59px;
+            margin: 3px 6px;
+        }
+
+
+        /* Navigation Bar: List Styling */
+
+        #navbar ul {
+            display: flex;
+            font-family: 'Baloo Bhai', cursive;
+        }
+
+        #navbar ul li {
+            list-style: none;
+            font-size: 1.3rem;
+        }
+
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 3px 70px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+
+
+
+
+        /* Home Section */
+
+
+        #home {
+
+            margin-left: 920px;
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 540px;
+            margin-top: 100px;
+        }
+
+
+        #home h1 {
+            display: flex;
+        }
+
+        #home img {
+            display: flex;
+            padding: -17px;
+            margin: 28px;
+            width: 120px;
+            border-radius: 70px;
+
+        }
+
+        .form-group input {
+            width: 180px;
+            border-radius: 8px;
+            text-align: center;
+            padding: 5px;
+            font-size: 15px;
+            margin: 6px auto;
+            border: none;
+            font-family: 'Bree Serif', serif;
+
+        }
+
+        #home button {
+            height: 30px;
+            font-family: 'Bree Serif', serif;
+            margin: 5px 0px;
+            padding: 3px;
+            border-radius: 8px;
+            font-size: 15px;
+            width: 93px;
+            border: none;
+
+        }
+
+
+        #home button:hover {
+            box-shadow: 1.6px 1.6px rgb(225, 239, 225);
+            color: white;
+            background-color: rgba(9, 6, 6, 0.826);
+        }
+
+        #home::before {
+            filter: brightness(0.5);
+            content: "";
+            position: absolute;
+            background: url('Train_Between.jpg') no-repeat center center/cover;
+            height: 750px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        #home h1 {
+            font-size: 25px;
+            color: white;
+            text-align: center;
+            font-family: 'Bree Serif', serif;
+        }
+
+        #home p {
+            z-index: -1;
+            display: flex;
+            top: 150px;
+            right: 125px;
+            color: white;
+            text-align: center;
+            font-size: 4.5rem;
+            font-family: 'Bree Serif', serif;
+            width: 500px;
+            position: absolute;
+
+        }
+
+
+
+        #author {
+
+            position: absolute;
+            margin: 30px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            top: 60px;
+            z-index: -1;
+
+        }
+
+
+        .search_box {
+
+            position: absolute;
+            margin: 100px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            top: 130px;
+            /* z-index: -1; */
+
+        }
+
+
+        .search_box1 {
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 180px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            top: 140px;
+
+        }
+
+        .search_box2 {
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 230px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            top: 185px;
+
+        }
+
+        .search_box2 input {
+
+
+
+
+
+            margin-left: 120px;
+            /* flex-direction: revert; */
+            text-align: center;
+            width: 260px;
+            /* flex-direction: revert; */
+            height: 45px;
+            font-family: 'Bree Serif', serif;
+            font-size: 10px;
+            color: rgb(22, 19, 19);
+            border-radius: 30px;
+            font-size: 16px;
+        }
+        
+        .search_box3 {
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 414px;
+            /* flex-direction: revert; */
+            text-align: left;
+            display: flex;
+            font-family: 'Bree Serif', serif;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            top: 185px;
+
+        }
+        
+
+
+
+        footer {
+            position: relative;
+
+            background: black;
+            color: white;
+            padding: 5px 0px;
+
+
+            /* padding: 9px; */
+        }
+
+
+
+
+        .center {
+            text-align: center;
+        }
+
+
+
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Style the search field */
+        /* form.example input[type=text] {
+    margin-top: 15px;
+    margin-left: 26px;
+    padding: 10px;
+    font-size: 17px;
+    
+    float: left;
+    width: 300%;
+    background: #f1f1f1;
+    height: 60px;
+    border-radius: 30px;
+} */
+
+
+        /* Style the submit button */
+        form.example button {
+            position: absolute;
+            left: 243px;
+            border-radius: 30px;
+            margin-top: 80px;
+            height: 50px;
+            margin-right: 0px;
+            float: right;
+            width: 260px;
+            padding: 10px;
+            background: #339df4;
+            color: white;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+            top: 370px;
+        }
+
+
+        form.example button:hover {
+            background: #00294a;
+        }
+
+        /* Clear floats */
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+
+
+
+
+
+
+
+        #class {
+
+
+            /* flex-direction: revert; */
+            text-align: center;
+            width: 260px;
+            /* flex-direction: revert; */
+            height: 45px;
+            font-family: 'Bree Serif', serif;
+            font-size: 10px;
+            color: rgb(22, 19, 19);
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+
+        #class1 {
+
+            margin-left: 55px;
+            /* flex-direction: revert; */
+            text-align: center;
+            width: 260px;
+            /* flex-direction: revert; */
+            height: 45px;
+            font-family: 'Bree Serif', serif;
+            font-size: 10px;
+            color: rgb(22, 19, 19);
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+
+        #class2 {
+
+            margin-left: 130px;
+            /* flex-direction: revert; */
+            text-align: center;
+            width: 260px;
+            /* flex-direction: revert; */
+            height: 45px;
+            font-family: 'Bree Serif', serif;
+            font-size: 10px;
+            color: rgb(22, 19, 19);
+            border-radius: 30px;
+            font-size: 16px;
+        }
+
+
+        #class3 {
+
+margin-left: 117px;
+/* flex-direction: revert; */
+text-align: center;
+width: 260px;
+/* flex-direction: revert; */
+height: 45px;
+font-family: 'Bree Serif', serif;
+font-size: 10px;
+color: rgb(22, 19, 19);
+border-radius: 30px;
+font-size: 16px;
+}
+
+
+        .fa-location-arrow:before {
+    left: 65px;
+    color: white;
+    position: absolute;
+    content: "\f124";
+    top: 250px;
+        }
+
+
+        .fa-map-marker:before {
+            left: 65px;
+    top: 345px;
+    content: "\f041";
+    color: white;
+    position: absolute;
+}
+
+
+
+.fa-calendar:before {
+    content: "\f073";
+    left: 65px;
+    top: 437px;
+    content: "\f041";
+    color: white;
+    position: absolute;
+}
+
+
+.fa-briefcase:before {
+    content: "\f073";
+    left: 65px;
+    top: 553px;
+    content: "\f041";
+    color: white;
+    position: absolute;
+}
+
+
+
+.fa-th-large:before {
+    
+    left: 65px;
+    top: 625px;
+    content: "\f041";
+    color: white;
+    position: absolute;
+    content: "\f009";
+}
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="login">
+        </div>
+        <ul>
+            <li class="item"><a href="">MY ACCOUNT</a></li>
+            <li class="item"><a href="Train_schedule.html">ADD NEW</a></li>
+            <li class="item"><a href="Train_Between.html">REPORTS</a></li>
+            <li class="item"><a href="Reschedule.html">CHANGE PASSWORD</a></li>
+            <li class="item"><a href="#contact">LOGOOUT</a>
+        </ul>
+    </nav>
+</body>
+
+<section id="home">
+
+</section>
+
+<div class="quotes">
+
+    <p id="author">Book Ticket</p>
+
+</div>
+<i _ngcontent-msw-c67="" class="fa fa-briefcase" style="margin: 3px 0px 0px 8px;"></i>
+
+<i _ngcontent-msw-c67="" class="fa fa-calendar" style="margin: 3px 0px 0px 8px;"></i>
+
+
+<i _ngcontent-keo-c67="" class="fa fa-location-arrow" style="margin: 3px 0px 0px 8px;"></i>
+<div class="search_box">
+    <ul>
+        <label class="fsize"><strong> From station:</strong> </label>
+        <select id="class" name="class">
+            <option value="select">------Source Station------</option>
+            <option value="ABR">ARRAH - ARA</option>
+            <option value="ABR">ABU ROAD - ABR</option>
+            <option value="AGC">AGRA CANTT - AGC</option>
+            <option value="AF">AGRA FORT - AF</option>
+            <option value="AGA">AGRA CITY - AGA</option>
+            <option value="ADI">AHMEDABAD JN - ADI</option>
+            <option value="AII">AJMER - AII</option>
+            <option value="AK">AKOLA - AK</option>
+            <option value="ALJN">ALIGARH JN - ALJN</option>
+            <option value="ALD">ALLAHABAD - ALD</option>
+            <option value="ALLP">ALLEPPEY - ALLP</option>
+            <option value="AWR">ALWAR - AWR</option>
+            <option value="AWY">ALWAYE - AWY</option>
+            <option value="UMB">AMBALA - UMB</option>
+            <option value="AME">AMETHI - AME</option>
+            <option value="AMI"> AMRAVATI - AMI</option>
+            <option value="ASR"> AMRITSAR - ASR</option>
+            <option value="ASN"> ASANSOL JN - ASN</option>
+            <option value="AWB"> AURANGABAD - AWB</option>
+            <option value="AMH"> AZAMGARH - AMH</option>
+            <option value="BRK"> BAHRAICH - BRK</option>
+            <option value="SBC"> BANGALORE - SBC</option>
+            <option value="BUI"> BALLIA - BUI</option>
+            <option value="BWT"> BANGARAPET - BWT</option>
+            <option value="BP"> BARRACKPORE - BP</option>
+            <option value="BJU"> BARAUNI JN - BJU</option>
+            <option value="BE"> BAREILLY - BE</option>
+            <option value="BST"> BASTI - BST</option>
+            <option value="BSL"> BHUSAVAL - BSL</option>
+            <option value="BGS"> BEGU SARAI - BGS</option>
+            <option value="BGM"> BELGAUM - BGM</option>
+            <option value="BAY"> BELLARY - BAY</option>
+            <option value="BGP"> BHAGALPUR - BGP</option>
+            <option value="BJP"> BIJAPUR - BJP</option>
+            <option value="BKN"> BIKANER JN - BKN</option>
+            <option value="BSP"> BILASPUR - BSP</option>
+            <option value="BINA"> BINA - BINA</option>
+            <option value="BPL"> BHOPAL - BPL</option>
+            <option value="BTI"> BHATINDA - BTI</option>
+            <option value="BKSC"> BOKARO STL CITY - BKSC</option>
+            <option value="BBS"> BHUBANESHWAR - BBS</option>
+            <option value="BWN"> BURDWAN - BWN</option>
+            <option value="BXR"> BUXAR - BXR</option>
+            <option value="CLT"> CALICUT - CLT</option>
+            <option value="CDG"> CHANDIGARH - CDG</option>
+            <option value="MAS"> CHENNAI - MAS</option>
+            <option value="CHTS"> COCHIN - CHTS</option>
+            <option value="CRJ">CHITTARANJAN - CRJ</option>
+            <option value="CBE">COIMBATORE JN - CBE</option>
+            <option value="DBG">DARBHANGA JN - DBG</option>
+            <option value="DJ">DARJEELING - DJ</option>
+            <option value="DDN">DEHRADUN - DDN</option>
+            <option value="DGR">DURGAPUR - DGR</option>
+            <option value="DHN">DHANBAD JN - DHN</option>
+            <option value="DWR">DHARWAR - DWR</option>
+            <option value="DURG">DURG - DURG</option>
+            <option value="DBRT"> DIBRUGARH TOWN - DBRT</option>
+            <option value="ERS"> ERNAKULAM - ERS</option>
+            <option value="ED"> ERODE - ED</option>
+            <option value="FD"> FAIZABAD JN - FD</option>
+            <option value="FDB"> FARIDABAD - FDB</option>
+            <option value="FBD"> FARUKHABAD - FBD</option>
+            <option value="GAYA"> GAYA JN - GAYA</option>
+            <option value="G"> GONDIA - G</option>
+            <option value="GKP"> GORAKHPUR JN - GKP</option>
+            <option value="GR"> GULBARGA - GR</option>
+            <option value="GNT"> GUNTUR - GNT</option>
+            <option value="GHY"> GUWAHATI - GHY</option>
+            <option value="GWL"> GWALIOR - GWL</option>
+            <option value="NZM"> H NIZAMUDDIN - NZM</option>
+            <option value="HBJ"> HABIBGANJ - HBJ</option>
+            <option value="HW"> HARIDWAR JN - HW</option>
+            <option value="HWH"> HOWRAH - HWH</option>
+            <option value="HYB"> HYDERABAD - HYB</option>
+            <option value="UBL"> HUBLI - UBL</option>
+            <option value="INDB"> INDORE JN BG - INDB</option>
+            <option value="ET"> ITARSI - ET</option>
+            <option value="JBP"> JABALPUR - JBP</option>
+            <option value="JP"> JAIPUR - JP</option>
+            <option value="JSM"> JAISALMER - JSM</option>
+            <option value="JUC"> JALANDHAR CITY - JUC</option>
+            <option value="JAT"> JAMMU - JAT</option>
+            <option value="JHS"> JHANSI JN - JHS</option>
+            <option value="JU"> JODHPUR - JU</option>
+            <option value="KLK"> KALKA - KLK</option>
+            <option value="CNB"> KANPUR - CNB</option>
+            <option value="CAPE"> KANYAKUMARI - CAPE</option>
+            <option value="KGM"> KATHGODAM - KGM</option>
+            <option value="KPD"> KATPADI - KPD</option>
+            <option value="HWH"> KOLKATA - HWH</option>
+            <option value="KOTA"> KOTA JN - KOTA</option>
+            <option value="KTYM"> KOTTAYAM - KTYM</option>
+            <option value="KZJ"> KAZIPET - KZJ</option>
+            <option value="LKO"> LUCKNOW - LKO</option>
+            <option value="LDH"> LUDHIANA - LDH</option>
+            <option value="MAO"> MADGAON - MAO</option>
+            <option value="MDU"> MADURAI - MDU</option>
+            <option value="MMC"> MAHAMANDIR - MMC</option>
+            <option value="MAQ"> MANGALORE - MAQ</option>
+            <option value="MMR"> MANMAD - MMR</option>
+            <option value="MTJ"> MATHURA JN - MTJ</option>
+            <option value="MAU"> MAU JN - MAU</option>
+            <option value="MTC"> MEERUT CITY - MTC</option>
+            <option value="MB"> MORADABAD - MB</option>
+            <option value="MGS"> MUGHAL SARAI - MGS</option>
+            <option value="BCT"> MUMBAI - BCT</option>
+            <option value="CSTM"> MUMBAI CST - CSTM </option>
+            <option value="MYS"> MYSORE - MYS</option>
+            <option value="NGP"> NAGPUR - NGP</option>
+            <option value="NK"> NASIK - NK</option>
+            <option value="NLR"> NELLORE - NLR</option>
+            <option value="NJP"> NEW JALPAIGURI - NJP</option>
+            <option value="NDLS"> NEW DELHI - NDLS</option>
+            <option value="PGT"> PALGHAT - PGT</option>
+            <option value="PNP"> PANIPAT JN - PNP</option>
+            <option value="PTA"> PATIALA - PTA</option>
+            <option value="PNBE"> PATNA JN - PNBE</option>
+            <option value="PUNE"> PUNE JN - PUNE</option>
+            <option value="PURI"> PURI JN - PURI</option>
+            <option value="PTBY"> PUTTAPARTHI OA - PTBY</option>
+            <option value="RBL"> RAE BARELI JN - RBL</option>
+            <option value="RIG"> RAIGARH - RIG</option>
+            <option value="R"> RAIPUR - R</option>
+            <option value="RMM"> RAMESWARAM - RMM</option>
+            <option value="RNC"> RANCHI - RNC</option>
+            <option value="RRME"> RANCHI ROAD - RRME</option>
+            <option value="RTM"> RATLAM - RTM</option>
+            <option value="RN"> RATNAGIRI - RN</option>
+            <option value="REWA"> REWA - REWA</option>
+            <option value="ROK"> ROHTAK - ROK</option>
+            <option value="RKSH"> RISHIKESH - RKSH</option>
+            <option value="RK"> ROORKEE - RK</option>
+            <option value="ROU"> ROURKELA - ROU</option>
+            <option value="SRE"> SAHARANPUR - SRE</option>
+            <option value="SA"> SALEM - SA</option>
+            <option value="SLI"> SANGLI - SLI</option>
+            <option value="STA"> SATNA - STA</option>
+            <option value="SNP"> SONIPAT - SNP</option>
+            <option value="SCL"> SILCHAR - SCL</option>
+            <option value="SML"> SIMLA - SML</option>
+            <option value="SVKS"> SIVAKASI - SVKS</option>
+            <option value="ST"> SURAT - ST</option>
+            <option value="TATA"> TATANAGAR JN - TATA</option>
+            <option value="TSI"> TENKASI JN - TSI</option>
+            <option value="TNA"> THANE - TNA</option>
+            <option value="TJ"> THANJAVUR - TJ</option>
+            <option value="TPTY"> TIRUPATI - TPTY</option>
+            <option value="TPJ"> TIRUCHIRAPALLI - TPJ</option>
+            <option value="TCR"> TRICHUR - TCR</option>
+            <option value="TVC"> TRIVANDRUM - TVC</option>
+            <option value="TN"> TUTICORIN - TN</option>
+            <option value="UDZ"> UDAIPUR - UDZ</option>
+            <option value="UJN"> UJJAIN - UJN</option>
+            <option value="BRC"> VADODARA - BRC</option>
+            <option value="BSB"> VARANASI JN - BSB</option>
+            <option value="VSG"> VASCO DA GAMA - VSG</option>
+            <option value="BZA"> VIJAYAWADA JN - BZA</option>
+            <option value="VSKP"> VISHAKAPATNAM - VSKP</option>
+            <option value="WL"> WARANGAL - WL</option>
+            <option value="WR">WARDHA - WR</option>
+        </select>
+    </ul>
+</div>
+
+<div class="search_box2">
+    <form>
+        <!-- abhinandan-->
+        <ul>
+
+            <b id="Class"> Date&emsp;<input type="Date" placeholder="dd-mm-yy"> <br> <br>
+                <label class="fsize"><strong> Class: </strong> </label>
+                <select id="class2" name="class">
+                    
+                    <option value="1AC">1AC</option>
+                    <option value="2AC">2AC</option>
+                    <option value="3AC">3AC</option>
+                    <option value="Sleeper">Sleeper</option>
+                    <option value="Chair">Chair</option> <br>
+                </select>
+
+
+        </ul>
+    </form>
+</div>
+
+<i _ngcontent-wuk-c67="" class="fa fa-th-large" style="margin: 3px 0px 0px 8px;"></i>
+<div class="search_box3">
+    <form>
+        <!-- abhinandan-->
+        <ul>
+
+           
+                <label class="fsize"><strong> Quota: </strong> </label>
+                <select id="class3" name="class">
+                    <option value="select">General</option>
+                    <option value="1AC">Ladies</option>
+                    <option value="2AC">Tatkal</option>
+                    <option value="3AC">Lower Berth/Sr. Citizen</option>
+                    <option value="Sleeper">Person with disability</option>
+                    <option value="Chair">Premium Tatkal</option> <br>
+                </select>
+
+
+        </ul>
+    </form>
+</div>
+
+<i _ngcontent-keo-c67="" class="fa fa-map-marker" style="margin: 3px 0px 0px 8px;"></i>
+<div class="search_box1">
+    <ul>
+        <label class="fsize"><strong> To station:</strong> </label>
+        <select id="class1" name="class">
+            <option value="select">------Destination Station------</option>
+            <option value="ABR">ARRAH - ARA</option>
+            <option value="ABR">ABU ROAD - ABR</option>
+            <option value="AGC">AGRA CANTT - AGC</option>
+            <option value="AF">AGRA FORT - AF</option>
+            <option value="AGA">AGRA CITY - AGA</option>
+            <option value="ADI">AHMEDABAD JN - ADI</option>
+            <option value="AII">AJMER - AII</option>
+            <option value="AK">AKOLA - AK</option>
+            <option value="ALJN">ALIGARH JN - ALJN</option>
+            <option value="ALD">ALLAHABAD - ALD</option>
+            <option value="ALLP">ALLEPPEY - ALLP</option>
+            <option value="AWR">ALWAR - AWR</option>
+            <option value="AWY">ALWAYE - AWY</option>
+            <option value="UMB">AMBALA - UMB</option>
+            <option value="AME">AMETHI - AME</option>
+            <option value="AMI"> AMRAVATI - AMI</option>
+            <option value="ASR"> AMRITSAR - ASR</option>
+            <option value="ASN"> ASANSOL JN - ASN</option>
+            <option value="AWB"> AURANGABAD - AWB</option>
+            <option value="AMH"> AZAMGARH - AMH</option>
+            <option value="BRK"> BAHRAICH - BRK</option>
+            <option value="SBC"> BANGALORE - SBC</option>
+            <option value="BUI"> BALLIA - BUI</option>
+            <option value="BWT"> BANGARAPET - BWT</option>
+            <option value="BP"> BARRACKPORE - BP</option>
+            <option value="BJU"> BARAUNI JN - BJU</option>
+            <option value="BE"> BAREILLY - BE</option>
+            <option value="BST"> BASTI - BST</option>
+            <option value="BSL"> BHUSAVAL - BSL</option>
+            <option value="BGS"> BEGU SARAI - BGS</option>
+            <option value="BGM"> BELGAUM - BGM</option>
+            <option value="BAY"> BELLARY - BAY</option>
+            <option value="BGP"> BHAGALPUR - BGP</option>
+            <option value="BJP"> BIJAPUR - BJP</option>
+            <option value="BKN"> BIKANER JN - BKN</option>
+            <option value="BSP"> BILASPUR - BSP</option>
+            <option value="BINA"> BINA - BINA</option>
+            <option value="BPL"> BHOPAL - BPL</option>
+            <option value="BTI"> BHATINDA - BTI</option>
+            <option value="BKSC"> BOKARO STL CITY - BKSC</option>
+            <option value="BBS"> BHUBANESHWAR - BBS</option>
+            <option value="BWN"> BURDWAN - BWN</option>
+            <option value="BXR"> BUXAR - BXR</option>
+            <option value="CLT"> CALICUT - CLT</option>
+            <option value="CDG"> CHANDIGARH - CDG</option>
+            <option value="MAS"> CHENNAI - MAS</option>
+            <option value="CHTS"> COCHIN - CHTS</option>
+            <option value="CRJ">CHITTARANJAN - CRJ</option>
+            <option value="CBE">COIMBATORE JN - CBE</option>
+            <option value="DBG">DARBHANGA JN - DBG</option>
+            <option value="DJ">DARJEELING - DJ</option>
+            <option value="DDN">DEHRADUN - DDN</option>
+            <option value="DGR">DURGAPUR - DGR</option>
+            <option value="DHN">DHANBAD JN - DHN</option>
+            <option value="DWR">DHARWAR - DWR</option>
+            <option value="DURG">DURG - DURG</option>
+            <option value="DBRT"> DIBRUGARH TOWN - DBRT</option>
+            <option value="ERS"> ERNAKULAM - ERS</option>
+            <option value="ED"> ERODE - ED</option>
+            <option value="FD"> FAIZABAD JN - FD</option>
+            <option value="FDB"> FARIDABAD - FDB</option>
+            <option value="FBD"> FARUKHABAD - FBD</option>
+            <option value="GAYA"> GAYA JN - GAYA</option>
+            <option value="G"> GONDIA - G</option>
+            <option value="GKP"> GORAKHPUR JN - GKP</option>
+            <option value="GR"> GULBARGA - GR</option>
+            <option value="GNT"> GUNTUR - GNT</option>
+            <option value="GHY"> GUWAHATI - GHY</option>
+            <option value="GWL"> GWALIOR - GWL</option>
+            <option value="NZM"> H NIZAMUDDIN - NZM</option>
+            <option value="HBJ"> HABIBGANJ - HBJ</option>
+            <option value="HW"> HARIDWAR JN - HW</option>
+            <option value="HWH"> HOWRAH - HWH</option>
+            <option value="HYB"> HYDERABAD - HYB</option>
+            <option value="UBL"> HUBLI - UBL</option>
+            <option value="INDB"> INDORE JN BG - INDB</option>
+            <option value="ET"> ITARSI - ET</option>
+            <option value="JBP"> JABALPUR - JBP</option>
+            <option value="JP"> JAIPUR - JP</option>
+            <option value="JSM"> JAISALMER - JSM</option>
+            <option value="JUC"> JALANDHAR CITY - JUC</option>
+            <option value="JAT"> JAMMU - JAT</option>
+            <option value="JHS"> JHANSI JN - JHS</option>
+            <option value="JU"> JODHPUR - JU</option>
+            <option value="KLK"> KALKA - KLK</option>
+            <option value="CNB"> KANPUR - CNB</option>
+            <option value="CAPE"> KANYAKUMARI - CAPE</option>
+            <option value="KGM"> KATHGODAM - KGM</option>
+            <option value="KPD"> KATPADI - KPD</option>
+            <option value="HWH"> KOLKATA - HWH</option>
+            <option value="KOTA"> KOTA JN - KOTA</option>
+            <option value="KTYM"> KOTTAYAM - KTYM</option>
+            <option value="KZJ"> KAZIPET - KZJ</option>
+            <option value="LKO"> LUCKNOW - LKO</option>
+            <option value="LDH"> LUDHIANA - LDH</option>
+            <option value="MAO"> MADGAON - MAO</option>
+            <option value="MDU"> MADURAI - MDU</option>
+            <option value="MMC"> MAHAMANDIR - MMC</option>
+            <option value="MAQ"> MANGALORE - MAQ</option>
+            <option value="MMR"> MANMAD - MMR</option>
+            <option value="MTJ"> MATHURA JN - MTJ</option>
+            <option value="MAU"> MAU JN - MAU</option>
+            <option value="MTC"> MEERUT CITY - MTC</option>
+            <option value="MB"> MORADABAD - MB</option>
+            <option value="MGS"> MUGHAL SARAI - MGS</option>
+            <option value="BCT"> MUMBAI - BCT</option>
+            <option value="CSTM"> MUMBAI CST - CSTM </option>
+            <option value="MYS"> MYSORE - MYS</option>
+            <option value="NGP"> NAGPUR - NGP</option>
+            <option value="NK"> NASIK - NK</option>
+            <option value="NLR"> NELLORE - NLR</option>
+            <option value="NJP"> NEW JALPAIGURI - NJP</option>
+            <option value="NDLS"> NEW DELHI - NDLS</option>
+            <option value="PGT"> PALGHAT - PGT</option>
+            <option value="PNP"> PANIPAT JN - PNP</option>
+            <option value="PTA"> PATIALA - PTA</option>
+            <option value="PNBE"> PATNA JN - PNBE</option>
+            <option value="PUNE"> PUNE JN - PUNE</option>
+            <option value="PURI"> PURI JN - PURI</option>
+            <option value="PTBY"> PUTTAPARTHI OA - PTBY</option>
+            <option value="RBL"> RAE BARELI JN - RBL</option>
+            <option value="RIG"> RAIGARH - RIG</option>
+            <option value="R"> RAIPUR - R</option>
+            <option value="RMM"> RAMESWARAM - RMM</option>
+            <option value="RNC"> RANCHI - RNC</option>
+            <option value="RRME"> RANCHI ROAD - RRME</option>
+            <option value="RTM"> RATLAM - RTM</option>
+            <option value="RN"> RATNAGIRI - RN</option>
+            <option value="REWA"> REWA - REWA</option>
+            <option value="ROK"> ROHTAK - ROK</option>
+            <option value="RKSH"> RISHIKESH - RKSH</option>
+            <option value="RK"> ROORKEE - RK</option>
+            <option value="ROU"> ROURKELA - ROU</option>
+            <option value="SRE"> SAHARANPUR - SRE</option>
+            <option value="SA"> SALEM - SA</option>
+            <option value="SLI"> SANGLI - SLI</option>
+            <option value="STA"> SATNA - STA</option>
+            <option value="SNP"> SONIPAT - SNP</option>
+            <option value="SCL"> SILCHAR - SCL</option>
+            <option value="SML"> SIMLA - SML</option>
+            <option value="SVKS"> SIVAKASI - SVKS</option>
+            <option value="ST"> SURAT - ST</option>
+            <option value="TATA"> TATANAGAR JN - TATA</option>
+            <option value="TSI"> TENKASI JN - TSI</option>
+            <option value="TNA"> THANE - TNA</option>
+            <option value="TJ"> THANJAVUR - TJ</option>
+            <option value="TPTY"> TIRUPATI - TPTY</option>
+            <option value="TPJ"> TIRUCHIRAPALLI - TPJ</option>
+            <option value="TCR"> TRICHUR - TCR</option>
+            <option value="TVC"> TRIVANDRUM - TVC</option>
+            <option value="TN"> TUTICORIN - TN</option>
+            <option value="UDZ"> UDAIPUR - UDZ</option>
+            <option value="UJN"> UJJAIN - UJN</option>
+            <option value="BRC"> VADODARA - BRC</option>
+            <option value="BSB"> VARANASI JN - BSB</option>
+            <option value="VSG"> VASCO DA GAMA - VSG</option>
+            <option value="BZA"> VIJAYAWADA JN - BZA</option>
+            <option value="VSKP"> VISHAKAPATNAM - VSKP</option>
+            <option value="WL"> WARANGAL - WL</option>
+            <option value="WR">WARDHA - WR</option>
+        </select>
+    </ul>
+</div>
+
+
+
+
+<div class="search_box">
+
+
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- The form -->
+    <!-- <a>Train Number:</a> -->
+    <form class="example" action="action_page.php">
+        <!--      
+   <input type="text" placeholder="Search.." name="search"> -->
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+
+
+
+<footer>
+    <div class="center">
+        Copyright &copy; Indian Railway Reservation System. All rights reserved!
+    </div>
+</footer>

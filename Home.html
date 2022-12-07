@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Indian Railway Reservation System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* CSS Reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* CSS Variables */
+    :root {
+        --navbar-height: 59px;
+    }
+
+    /* Navigation Bar */
+    #navbar {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    /* Navigation Bar: Logo and Image */
+    #logo {
+        margin: 10px 34px;
+    }
+
+    #logo img {
+        filter: invert();
+        height: 59px;
+        margin: 3px 6px;
+    }
+
+
+    /* Navigation Bar: List Styling */
+
+    #navbar ul {
+        display: flex;
+        font-family: 'Baloo Bhai', cursive;
+    }
+
+    #navbar ul li {
+        list-style: none;
+        font-size: 1.3rem;
+    }
+
+    #navbar ul li a {
+        color: white;
+        display: block;
+        padding: 3px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+
+    #navbar ul li a:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+
+
+    /* Nav Bar 2 */
+
+    #navbar2 {
+        display: flex;
+        align-items: center;
+        /* position: sticky; */
+        top: 0px;
+        /* z-index: -1; */
+
+    }
+
+    #navbar2::before {
+        content: "";
+        /* background-color: black; */
+        position: absolute;
+        top: -103px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.6;
+    }
+
+
+    /* Navigation Bar: Logo and Image */
+    /* #logo {
+        margin: 10px 34px;
+    }
+
+    #logo img {
+        filter: invert();
+        height: 59px;
+        margin: 3px 6px;
+    } */
+
+
+    /* Navigation Bar: List Styling */
+
+    #navbar2 ul {
+        margin-top: 80px;
+        display: flex;
+        font-family: 'Baloo Bhai', cursive;
+
+    }
+
+    #navbar2 ul li {
+        margin-top: -160px;
+        list-style: none;
+        font-size: 1.3rem;
+
+    }
+
+    #navbar2 ul li a {
+        background-color: rgb(212, 210, 210);
+        color: rgb(3, 3, 3);
+        display: block;
+        padding: 10px 40px;
+        border-radius: 20px;
+        text-decoration: none;
+        margin: 5px;
+
+    }
+
+    #navbar2 ul li a:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(6, 6, 6);
+
+    }
+
+    /* Home Section */
+
+
+    #home {
+
+        margin-left: 920px;
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 550px;
+        margin-top: 100px;
+    }
+
+
+    #home h1 {
+        display: flex;
+    }
+
+    #home img {
+        display: flex;
+        padding: -17px;
+        margin: 28px;
+        width: 120px;
+        border-radius: 70px;
+
+    }
+
+    .form-group input {
+        width: 180px;
+        border-radius: 8px;
+        text-align: center;
+        padding: 5px;
+        font-size: 15px;
+        margin: 6px auto;
+        border: none;
+        font-family: 'Bree Serif', serif;
+
+    }
+
+    #home button {
+        height: 30px;
+        font-family: 'Bree Serif', serif;
+        margin: 5px 0px;
+        padding: 3px;
+        border-radius: 8px;
+        font-size: 15px;
+        width: 93px;
+        border: none;
+
+    }
+
+
+    #home button:hover {
+        box-shadow: 1.6px 1.6px rgb(225, 239, 225);
+        color: white;
+        background-color: rgba(9, 6, 6, 0.826);
+    }
+
+    #home::before {
+        filter: brightness(0.5);
+        content: "";
+        position: absolute;
+        background: url('Train_schedule.jpg') no-repeat center center/cover;
+        height: 642px;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+        opacity: 1;
+    }
+
+    #home h1 {
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #home p {
+        z-index: -1;
+        display: flex;
+        top: 150px;
+        right: 125px;
+        color: white;
+        text-align: center;
+        font-size: 4.5rem;
+        font-family: 'Bree Serif', serif;
+        width: 500px;
+        position: absolute;
+
+    }
+
+    #forget {
+        font-family: 'Bree Serif', serif;
+        font-size: 15px;
+        color: white;
+        text-decoration: none;
+    }
+
+    #forget:hover {
+        color: rgb(5, 4, 74);
+    }
+
+    #author {
+
+        position: absolute;
+        margin: 30px;
+        /* flex-direction: revert; */
+        text-align: left;
+        display: flex;
+        font-family: 'Bree Serif', serif;
+        font-size: 60px;
+        color: rgb(255, 255, 255);
+        top: 60px;
+        z-index: -1;
+
+    }
+
+
+    #author1 {
+
+        position: absolute;
+        margin: 32px;
+        /* flex-direction: revert; */
+        text-align: left;
+        display: flex;
+        font-family: 'Bree Serif', serif;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        top: 125px;
+        z-index: -1;
+
+    }
+
+    /* save electricity section */
+    #save {
+        border-radius: 28px;
+        /* border: 2px solid brown; */
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 1600px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #save p {
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    .save-sec img {
+        width: 200px;
+        height: 130px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .save-box {
+        text-align: center;
+    }
+
+    /* Services Section */
+    #services {
+        position: absolute;
+        margin: 10px;
+        display: flex;
+        z-index: -1;
+    }
+
+    #services .box {
+        /* background-color: rgb(99, 96, 96); */
+        margin-top: -70px;
+        width: 65%;
+        /* border: 2px solid brown; */
+        padding: 20px;
+        border-radius: 20px;
+        background: #cdcccc;
+        height: 620px;
+    }
+
+    #services .box img {
+        height: 160px;
+        margin: auto;
+        display: block;
+    }
+
+    #services .box p {
+        font-family: 'Bree Serif', serif;
+
+    }
+
+    .link {
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        font-size: 28px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    .link li a {
+        text-decoration: none;
+    }
+
+    .link li a:hover {
+        color: rgb(11, 1, 70);
+        text-decoration: underline;
+    }
+
+    .state {
+
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #fqs {
+        cursor: pointer;
+        padding: 10px;
+        text-align: left;
+        font-size: 16px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #fqs li a {
+        text-decoration: none;
+    }
+
+    #fqs li a:hover {
+        color: rgb(207, 42, 42);
+    }
+
+
+    /* About Section */
+
+
+    #about-section::before {
+
+
+        border-radius: 20px;
+        top: 764px;
+        filter: contrast(0.3);
+        content: "";
+        position: absolute;
+        background: url(about.jpg);
+        width: 73%;
+        height: 550px;
+        z-index: -1;
+        opacity: 0.8;
+        left: 400px;
+        height: 665px;
+    }
+
+    #abouts p {
+        color: rgb(0, 0, 0);
+        /* border-radius: 20px; */
+        /* top: 850px; */
+        text-align: center;
+        content: "";
+        position: absolute;
+        margin-top: 20px;
+        width: 73%;
+        /* height: 550px; */
+        z-index: -1;
+        text-align: center;
+        font-size: 20px;
+        left: 400px;
+        /* height: 644px; */
+    }
+
+    .about-item {
+        padding: 34px;
+    }
+
+    #abouts-img {
+        height: 124px;
+    }
+
+
+
+
+    footer {
+        position: relative;
+        top: 632px;
+        background: black;
+        color: white;
+        padding: 9px 20px;
+    }
+
+    /* Utility Classes */
+    .h-primary {
+        margin-top: 30px;
+        text-align: center;
+        z-index: -1;
+        top: 750px;
+        left: 600px;
+        font-family: 'Bree Serif', serif;
+        font-size: 50px;
+
+        position: absolute;
+
+    }
+
+    .h-secondary {
+        font-family: 'Bree Serif', serif;
+        font-size: 2.3rem;
+        padding: 12px;
+    }
+
+    .btn {
+        padding: 6px 20px;
+        border: 2px solid white;
+        background-color: brown;
+        color: white;
+        margin: 17px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+
+    /* .h-secondary center{
+        text-align: center;
+    } */
+</style>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="login">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">HOME</a></li>
+            <li class="item"><a href="Train_schedule.html">TRAIN SCHEDULE</a></li>
+            <li class="item"><a href="Train_Between.html">BETWEEN STATION</a></li>
+            <li class="item"><a href="Reschedule.html">RESCHEDULE</a></li>
+            <li class="item"><a href="#contact">CANCELLED</a>
+            <li class="item"><a href="#contact">DIVERTED</a></li>
+            <li class="item"><a href="#about-section">CONTACT US</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="modal">
+        <img src="login.png" alt="">
+        <h1>Admin Login</h1>
+        <form>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Username" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Password" id="passwd" name="password">
+            </div>
+            <div>
+                <button>submit</button>
+                <button><a href="Home.html"></a> Reset</button>
+            </div>
+            <a href="#" id="forget">Forget Password?</a>
+        </form>
+
+    </section>
+
+    <div class="quotes">
+
+        <p id="author">RAILWAY RESERVATION SYSTEM</p>
+        <p id="author1">A Complete Admin Application For Train Booking system</p>
+    </div>
+
+
+
+
+
+    <nav id="navbar2">
+        <!-- <div id="logo">
+            <img src="logo.png" alt="login">
+        </div> -->
+        <ul>
+            <li class="item"><a href="#home">TRAIN ENQUIRY</a></li>
+            <li class="item"><a href="#home">FARE ENQUIRY</a></li>
+            <li class="item"><a href="#services-container">STATION SCHEDULE</a></li>
+            <li class="item"><a href="#about-section">CANCELLED TRAIN</a></li>
+            <!-- <li class="item"><a href="#contact">RESCHEDULE TRAIN</a></li> -->
+            <!-- <li class="item"><a href="#contact">CANCELLED</a> -->
+            <li class="item"><a href="#contact">DIVERTED TRAIN</a></li>
+            <li class="item"><a href="#contact">RESCHEDULE TRAIN</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="services-container">
+        <!-- <h1 class="h-primary center">Our Services</h1> -->
+        <div id="services">
+            <div class="box">
+                <img src="map.png" alt="">
+                <h2 class="h-secondary center"> Longest Railway Platforms</h2>
+                <ul class="state">
+                    <li>1. Gorakhpur Railway Station</li>
+                    <li> 2. Kollam Junction</li>
+                    <li> 3. Kharagpur Railway Platform</li>
+                    <li> 4. Bilaspur Railway Station</li>
+                    <li> 5. Jhansi Junction</li>
+                    <li> 6. Sonepur Railway Station</li>
+                </ul>
+            </div>
+
+    </section>
+    <section id="about-section">
+        </li>
+        <h1 class="h-primary center">RAILWAY RESERVATION SYSTEM</h1>
+        <div id="abouts">
+            <p>
+
+                <br>
+                A railway reservations system or central reservation system (ERS) is a railwayized system used to store
+                and retrieve information and conduct transactions related to air travel, hotels, car rental, or
+                activities. Originally designed and operated by airlines, ERSes were later extended for the use of
+                travel agencies. Major ERS operations that book and sell tickets for multiple airlines are known as
+                Global Distribution System (GDS). Airlines have divested most of their direct holdings to dedicated GDS
+                companies, who make their systems accessible to consumers through Internet gateways. Modern GDSes
+                typically allow users to book hotel rooms, rental cars, airline tickets as well as activities and tours.
+                They also provide access to railway reservations and bus reservations in some markets, although these
+                are not always integrated with the main system.In hotels ERS allow sales and reservation team can access
+                availability of room rates, accommodation and special rates from a central reservation office. ERS
+                hosted on a cloud aid these information to be accessible to hotel reservation team while they are on
+                travel as well.
+
+                <br>
+                <br>
+                <br>
+
+                Indian Railway installed the first automated booking system, the experimental electromechanical
+                Reservisor. A newer machine with temporary storage based on a magnetic drum, the Magnetronic Reservisor,
+                soon followed. This system proved successful, and was soon being used by several airlines, as well as
+                Sheraton Hotels and Goodyear for inventory control. It was seriously hampered by the need for local
+                human operators to do the actual lookups; ticketing agents would have to call a booking office, whose
+                operators would direct a small team operating the Reservisor and then read the results over the
+                telephone. There was no way for agents to directly query the system.
+
+                <br>
+                <br>
+                <br>
+
+                In 2020, Indian Railways carried 808.6 crore (8.086 billion) passengers and in 2022, Railways
+                transported 1418.1 million tonnes of freight.[8][4] It runs 13,169 passenger trains daily, on both
+                long-distance and suburban routes, covering 7,325 stations across India.[4] Mail or Express trains, the
+                most common types of trains, run at an average speed of 50.6 km/h (31.4 mph). Suburban EMUs run at an
+                average speed of 37.5 km/h (23.3 mph). Ordinary passenger trains (incl. mixed) run at an average speed
+                of 33.5 km/h (20.8 mph).[4] The maximum speed of passenger trains varies, with the Vande Bharat Express
+                running at a peak speed of 180 km/h (110 mph).
+            </p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="center">
+            Copyright &copy; Indian Railway Reservation System. All rights reserved!
+        </div>
+    </footer>
+
+
+
+
+    
+    <!-- <script>
+
+        function myFunction() {
+            alert("Your details have been successfully submitted ,We will contact you soon");
+        }
+    </script> -->
+</body>
+
+</html>
